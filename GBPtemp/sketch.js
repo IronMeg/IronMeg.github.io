@@ -25,7 +25,7 @@ var p4 = 495;
 
 function setup() {
   createCanvas(520,500);
-  img = loadImage("assets/GBPmask.png");
+  img = loadImage("assets/GBPmask2.png");
   RHeart = loadImage("assets/RHeart.png");
   BHeart = loadImage("assets/BHeart.png");
   
@@ -46,6 +46,14 @@ function setup() {
   SlideIdentB = createSlider(0,255,255);
   SlideIdentR.position(IdentX+10,IdentY+20);
   SlideIdentB.position(IdentX+10,IdentY+50);
+  //---end of IdentSlider code
+  
+  //Expression Sliders
+  SlideExpressR = createSlider(0,255,255);
+  SlideExpressB = createSlider(0,255,255);
+  SlideExpressR.position(ExpressX+10,ExpressY+20);
+  SlideExpressB.position(ExpressX+10,ExpressY+50);
+  //---end of ExpressSlider code
 }
 
 function draw() {
@@ -60,6 +68,12 @@ function draw() {
   fill(IdentR,IdentG,IdentB);
   rect(0,50,400,500);
   //---end of Ident fill
+  
+  //ExpressFill
+  var ExpressR,ExpressG,ExpressB;
+  ExpressR = SlideExpressR.value();
+  ExpressB = SlideExpressB.value();
+  ExpressG = 0;
   
   image(img,-75,20);
   //text
@@ -85,7 +99,7 @@ function draw() {
   
   
   //lines
-  stroke(255,0,0);
+  stroke(ExpressR,ExpressG,ExpressB);
   //first lines
   strokeWeight(3);
   line(p1,p2,p3,p2);
