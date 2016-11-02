@@ -54,10 +54,10 @@ function setup() {
   input = createInput();
   input.position(377,28);
   button = createButton('Load Name');
-  button.position(385,48);
+  button.position(410,48);
   button.mousePressed(name);
-  buttonS = createButton('Save');
-  buttonS.position(457,48);
+  // buttonS = createButton('Save');
+  // buttonS.position(457,48);
   greeting = createElement('h2','Who are you?');
   greeting.position(115,0);
   //---end of name code
@@ -260,7 +260,10 @@ function draw() {
   text("Sexual Attraction",SexualX,SexualY);
   text("Gender Expression",ExpressX,ExpressY);
   text("Biological Sex",BioX,BioY);
-  text("Romantic Attraction",RomanticX,RomanticY)
+  text("Romantic Attraction",RomanticX,RomanticY);
+  textSize(10);
+  text("code by Megan Vanderah",10,505);
+  text("based on graphic from itspronouncedmetrosexual.com",10,515);
   //---end of text code
   
   
