@@ -27,7 +27,7 @@ var aboutTop2 = 550;
 var aboutBott = 30;
 var aboutBott2 = 30;
 
-var intr0 = "This is a Lit Dictionary to define* commonly confusing millenial words. Try different word types for hiliarious results! \n \n*most defintions not accuarte"
+var intr0 = "This is a Lit Dictionary to define* commonly confusing millenial words. Try different word types for hiliarious results! \n \n*most defintions not accurate"
 var textR = 112;
 var textG = 166;
 var textB = 255;
