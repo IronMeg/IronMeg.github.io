@@ -271,14 +271,14 @@ function draw() {
   if (saveRequest == true){
     fill(112,166,255);
     rect(520,480,140,140);
-      canvasImage = w0rd+counter+s+".png";
-      save(cnv,canvasImage);
-      console.log("image saved");
-      saveRequest = false;
     fill('black');
     textAlign(RIGHT);
     textSize(20);
     text("Lit Dictionary \n by Megan Vanderah",1195,568);
+      canvasImage = w0rd+counter+s+".png";
+      save(cnv,canvasImage);
+      console.log("image saved");
+      saveRequest = false;
   }
 }
 
