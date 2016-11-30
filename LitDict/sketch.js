@@ -1,24 +1,37 @@
-var TopBound = 170;
-var LeftBound = 100;
-var ButBound2 = 240;
-var ButBound3 = 380;
-var RightBound = 500;
-var ButHeight = 55;
-var ButWidth = 120;
+var TopBound = 340;
+var LeftBound = 200;
+var ButBound2 = 480;
+var ButBound3 = 760;
+var RightBound = 1000;
+var ButHeight = 110;
+var ButWidth = 240;
 var BottomBound = TopBound + ButHeight;
-var WordLength = 200;
-var TypeLength = 50;
-var SentWidth = 400;
-var SentHeight = 250;
-var tbWidth = 275;
-var newR = 60;
-var newL = 300-30;
-var newTop = 275;
-var newBott = 15;
-var saveL = 300-30;
-var saveR = 60;
-var saveTop = 250;
-var saveBott = 15;
+var WordLength = 400;
+var TypeLength = 100;
+var SentWidth = 800;
+var SentHeight = 500;
+var tbWidth = 550;
+var newR = 120;
+var newL = 600-60;
+var newTop = 550;
+var newBott = 30;
+var saveL = 600-60;
+var saveR = 120;
+var saveTop = 500;
+var saveBott = 30;
+var aboutL = 100-60;
+var aboutR = 120;
+var aboutR2 = 120;
+var aboutTop = 550;
+var aboutTop2 = 550;
+var aboutBott = 30;
+var aboutBott2 = 30;
+
+var intr0 = "This is a Lit Dictionary to define* commonly confusing millenial words. Try different word types for hiliarious results! \n \n*most defintions not accuarte"
+var textR = 112;
+var textG = 166;
+var textB = 255;
+var t1me = 90;
 
 
 var counter = 1;
@@ -41,7 +54,7 @@ function preload(){
 }
 
 function setup() {
-  cnv = createCanvas(600,300)
+  cnv = createCanvas(1200,600)
   reset();
 }
 
@@ -51,7 +64,7 @@ function draw() {
     fill(186,212,255);
     if(mouseX > LeftBound && mouseX < LeftBound+ButWidth && mouseY > TopBound && mouseY <TopBound+ButHeight){
       stroke(186,212,255);
-      strokeWeight(5);
+      strokeWeight(10);
       rect(LeftBound,TopBound,ButWidth,ButHeight);
     }else{
     noStroke();
@@ -59,7 +72,7 @@ function draw() {
     }
     if(mouseX > ButBound2 && mouseX < ButBound2+ButWidth && mouseY > TopBound && mouseY <TopBound+ButHeight){
       stroke(186,212,255);
-      strokeWeight(5);
+      strokeWeight(10);
       rect(ButBound2,TopBound,ButWidth,ButHeight);
     }else{
     noStroke();
@@ -67,7 +80,7 @@ function draw() {
     }
     if(mouseX > ButBound3 && mouseX < ButBound3+ButWidth && mouseY > TopBound && mouseY <TopBound+ButHeight){
       stroke(186,212,255);
-      strokeWeight(5);
+      strokeWeight(10);
       rect(ButBound3,TopBound,ButWidth,ButHeight);
     }else{
     noStroke();
@@ -85,33 +98,58 @@ function draw() {
     noStroke();
     fill('black');
     textAlign(CENTER);
-    textSize(12);
-    text("new word", newL+1,newTop+2,newR,newBott);
-    
-    textSize(60);
-    textFont(fontBig);
-    text(w0rd, width/2,90);
-    textSize(30);
-    textFont(fontReg);
-    text("This word is a...",width/2,150);
     textSize(20);
-    text("Noun",LeftBound+1,TopBound+19,ButWidth,ButHeight);
-    text("Verb",ButBound2+2,TopBound+19,ButWidth,ButHeight);
-    text("Adjective",ButBound3+2,TopBound+19,ButWidth,ButHeight);
+    text("new word", newL+2,newTop+4,newR,newBott);
+    
+    if(mouseX > aboutL && mouseX < aboutL+aboutR && mouseY > aboutTop && mouseY < aboutTop+aboutBott){
+      fill(138,182,252);
+      rect(aboutL,aboutTop2-90,210,aboutBott2+90);
+      fill(textR-t1me,textG-t1me,textB-t1me);
+      textFont(fontReg);
+      textSize(15);
+      textAlign(LEFT);
+      text(intr0,aboutL+3,aboutTop2-85,207,110);
+      textAlign(CENTER);
+    }else{
+      aboutTop2 = aboutTop;
+      aboutR2 = aboutR;
+      aboutBott2 = aboutBott;
+      textR = 112;
+      textG = 166;
+      textB = 255;
+      fill(106,158,242);
+      rect(aboutL,aboutTop,aboutR,aboutBott);
+      fill('black');
+      textAlign(CENTER);
+      textSize(20);
+      text("wut dis?", aboutL+2,aboutTop+4,aboutR,aboutBott);
+    }
+    
+    fill('black');
+    textSize(120);
+    textFont(fontBig);
+    text(w0rd, width/2,180);
+    textSize(60);
+    textFont(fontReg);
+    text("This word is a...",width/2,300);
+    textSize(40);
+    text("Noun",LeftBound+2,TopBound+38,ButWidth,ButHeight);
+    text("Verb",ButBound2+4,TopBound+38,ButWidth,ButHeight);
+    text("Adjective",ButBound3+4,TopBound+38,ButWidth,ButHeight);
   }else if(toggleN == true){
     textFont(fontReg);
     // text("Noun loading...", width/2,height/3);
     textAlign(RIGHT);
     textAlign(BOTTOM);
     textFont(fontBig);
-    textSize(30);
+    textSize(60);
     text(w0rd, 0, (height/2), WordLength);
     textAlign(LEFT);
     textFont(fontItal);
-    textSize(20);
-    text("noun:", WordLength-5, height/2, TypeLength);
+    textSize(40);
+    text("noun:", WordLength-10, height/2, TypeLength);
     textFont(fontReg);
-    text(n0un,WordLength+TypeLength-5, height/2, tbWidth);
+    text(n0un,WordLength+TypeLength-10, height/2, tbWidth);
     
     if(mouseX > newL && mouseX < newL+newR && mouseY > newTop && mouseY < newTop+newBott){
       fill(138,182,252);
@@ -122,8 +160,8 @@ function draw() {
     }
     fill('black');
     textAlign(CENTER);
-    textSize(12);
-    text("new word", newL+1,newTop+2,newR,newBott);
+    textSize(20);
+    text("new word", newL+2,newTop+4,newR,newBott);
     
     if(mouseX > saveL && mouseX < saveL+saveR && mouseY > saveTop && mouseY < saveTop+saveBott){
       noStroke();
@@ -137,21 +175,21 @@ function draw() {
     noStroke();
     fill('black');
     textAlign(CENTER);
-    textSize(12);
-    text("save word", saveL+1,saveTop+2,saveR,saveBott);
+    textSize(20);
+    text("save word", saveL+2,saveTop+4,saveR,saveBott);
   }else if(toggleV == true){
     textFont(fontReg);
     // text("Verb loading...", width/2,height/3);
     textAlign(RIGHT);
     textFont(fontBig);
-    textSize(30);
+    textSize(60);
     text(w0rd, 0, (height/2), WordLength);
     textAlign(LEFT);
     textFont(fontItal);
-    textSize(20);
-    text("verb:", WordLength-5, height/2, TypeLength);
+    textSize(40);
+    text("verb:", WordLength-10, height/2, TypeLength);
     textFont(fontReg);
-    text(v3rb,WordLength+TypeLength-5, height/2, tbWidth);
+    text(v3rb,WordLength+TypeLength-10, height/2, tbWidth);
     
     if(mouseX > newL && mouseX < newL+newR && mouseY > newTop && mouseY < newTop+newBott){
       fill(138,182,252);
@@ -162,8 +200,8 @@ function draw() {
     }
     fill('black');
     textAlign(CENTER);
-    textSize(12);
-    text("new word", newL+1,newTop+2,newR,newBott);
+    textSize(20);
+    text("new word", newL+2,newTop+4,newR,newBott);
     
     if(mouseX > saveL && mouseX < saveL+saveR && mouseY > saveTop && mouseY < saveTop+saveBott){
       noStroke();
@@ -177,21 +215,21 @@ function draw() {
     noStroke();
     fill('black');
     textAlign(CENTER);
-    textSize(12);
-    text("save word", saveL+1,saveTop+2,saveR,saveBott);
+    textSize(20);
+    text("save word", saveL+2,saveTop+4,saveR,saveBott);
   }else if(toggleA == true){
     textFont(fontReg);
     // text("Adjective loading...", width/2,height/3);
     textAlign(RIGHT);
     textFont(fontBig);
-    textSize(30);
+    textSize(60);
     text(w0rd, 0, (height/2), WordLength);
     textAlign(LEFT);
     textFont(fontItal);
-    textSize(20);
-    text("adjective:", WordLength-5, height/2, TypeLength);
+    textSize(40);
+    text("adjective:", WordLength-10, height/2, TypeLength);
     textFont(fontReg);
-    text(ad7,WordLength+TypeLength+30, height/2, tbWidth-30);
+    text(ad7,WordLength+TypeLength+60, height/2, tbWidth-60);
     
     if(mouseX > newL && mouseX < newL+newR && mouseY > newTop && mouseY < newTop+newBott){
       fill(138,182,252);
@@ -202,8 +240,8 @@ function draw() {
     }
     fill('black');
     textAlign(CENTER);
-    textSize(12);
-    text("new word", newL+1,newTop+2,newR,newBott);
+    textSize(20);
+    text("new word", newL+2,newTop+4,newR,newBott);
     
     if(mouseX > saveL && mouseX < saveL+saveR && mouseY > saveTop && mouseY < saveTop+saveBott){
       noStroke();
@@ -217,11 +255,11 @@ function draw() {
     noStroke();
     fill('black');
     textAlign(CENTER);
-    textSize(12);
-    text("save word", saveL+1,saveTop+2,saveR,saveBott);
+    textSize(20);
+    text("save word", saveL+2,saveTop+4,saveR,saveBott);
   }else{
     fill('black');
-    textSize(12);
+    textSize(20);
     textFont(fontReg);
     text("Generating...",width/2,height/2);
   }
@@ -233,11 +271,11 @@ function draw() {
   if (saveRequest == true){
     fill('black');
     textAlign(RIGHT);
-    textSize(12);
-    text("Lit Dictionary \n by Megan Vanderah",600,280);
+    textSize(20);
+    text("Lit Dictionary \n by Megan Vanderah",1200,650);
     fill(112,166,255);
-    rect(260,240,70,70);
-      canvasImage = "exports/"+w0rd+h+m+s+".png";
+    rect(520,480,140,140);
+      canvasImage = w0rd+counter+s+".png";
       save(cnv,canvasImage);
       console.log("image saved");
       saveRequest = false;
@@ -249,17 +287,17 @@ function mousePressed(){
     toggle = true;
     console.log("clicked noun");
     toggleN = true;
-    TopBound = 500;
+    TopBound = 1000;
   }else if(mouseX > ButBound2 && mouseX < ButBound2+ButWidth && mouseY > TopBound && mouseY <TopBound+ButHeight){
     toggle = true;
     console.log("clicked verb");
     toggleV =true;
-    TopBound = 500;
+    TopBound = 1000;
   }else if(mouseX > ButBound3 && mouseX < ButBound3+ButWidth && mouseY > TopBound && mouseY <TopBound+ButHeight){
     toggle = true;
     console.log("clicked adj");
     toggleA =true;
-    TopBound = 500;
+    TopBound = 1000;
   }
   
   if(mouseX > saveL && mouseX < saveL+saveR && mouseY > saveTop && mouseY < saveTop+saveBott){
@@ -278,7 +316,7 @@ function reset(){
   toggleN = false;
   toggleV = false;
   toggleA = false;
-  TopBound = 170;
+  TopBound = 340;
 
   
   rg = new RiGrammar();
