@@ -290,7 +290,7 @@ function reset(){
   rn.addRule('<start>', "everyone's favorite <1><I>.")
   rn.addRule('<1>', "<adj1><2>");
   rn.addRule('<adj1>',"<adj> ")
-  rn.addRule('<adj>', "fake|secret|famous|very cool|modern day")
+  rn.addRule('<adj>', "fake|secret|famous|very cool|modern day|")
   rn.addRule('<2>', "<3> | period of <Time> | time <Time2> | mobile app | movie | dictionary | social media <3> | version of <you>");
   rn.addRule('<3>', "picture | profile | person");
   rn.addRule('<you>', "yourself | your favorite character | your best friend | your pet");
