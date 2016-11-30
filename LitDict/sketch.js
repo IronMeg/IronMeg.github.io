@@ -35,6 +35,7 @@ var t1me = 90;
 
 
 var counter = 1;
+var counter2 = 1;
 var cnv, canvasImage;
 
 var fontReg, fontBig, fontItal
@@ -275,10 +276,15 @@ function draw() {
     textAlign(RIGHT);
     textSize(20);
     text("Lit Dictionary \n by Megan Vanderah",1195,568);
+    console.log("save requested");
+    counter2++;
+    if(counter2 == 3){
       canvasImage = w0rd+counter+s+".png";
       save(cnv,canvasImage);
       console.log("image saved");
+      counter2 = 1;
       saveRequest = false;
+    }
   }
 }
 
