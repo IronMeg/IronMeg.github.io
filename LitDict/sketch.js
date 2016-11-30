@@ -306,6 +306,7 @@ function reset(){
   rv.addRule('<1>', "trust <T> | decorate <D> | live <L> | live, but just barely | be <B> | laugh | engage in sexual activity very loudly");
   rv.addRule('<T>', "someone completely | no one | a little too much");
   rv.addRule('<D>', "one's <object> | for <Holi> | excessively");
+  rv.addRule('<B>', "alive | in the moment | free | under social pressure | alone");
   rv.addRule('<object>',"self | pet | home | dead-end-job office cubicle");
   rv.addRule('<Holi>',"a holiday no one likes | Christmas | Halloween");
   rv.addRule('<L>', "alone | with your parents. Five years after graudating college. To be sad | happily ever after | the life you want | on the edge");
